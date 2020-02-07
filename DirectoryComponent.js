@@ -30,7 +30,7 @@ class Directory extends Component {
                     id: 3,
                     name: 'Disney Wonder',
                     image: 'assets/images/wonder.jpg',
-                    elevation: 42,
+                    destinations: '3/4/7 Night Sailings to Mexican Riveria, Western Caribbean, and Alaska ',
                    
                 }
             ],
@@ -38,8 +38,23 @@ class Directory extends Component {
     }
 
     render() {
+        const directory = this.state.cruiseships.map(cruiseship => {
+            return (
+                <div key={cruiseship.id} className="col">
+                    <img src={cruiseship.image} alt={cruiseship.name} />
+                    <h2>{cruiseship.name}</h2>
+                    <p>{cruiseship.destinations}</p>
+                </div>
+            );
+        });
+
         return (
-            <div />
+            <div className="container">
+                <div className="row">
+                    {directory}
+                </div>
+            </div>
+
         );
     }
 }
