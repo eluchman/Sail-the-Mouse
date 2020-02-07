@@ -23,9 +23,10 @@ class Directory extends Component {
                         <CardText>{cruiseship.destinations}</CardText>
                     </CardBody>
                 </Card>
-            )
+            );
 
         }
+        return <div />
     }
 
     render() {
@@ -46,6 +47,11 @@ class Directory extends Component {
             <div className="container">
                 <div className="row">
                     {directory}
+                </div>
+                <div className="row">
+                    <div className="col-md-5 m-1">
+                        {this.renderSelectedCruiseship(this.state.selectedCruiseship)}
+                    </div>
                 </div>
             </div>
 
